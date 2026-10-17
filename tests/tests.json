@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Log meals and get AI nutrition guidance",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "meal logging create/read",
+      "AI meal guidance",
+      "meal form validation"
+    ],
+    "description": "Verifies a meal can be saved, appears in the daily log, and AI guidance is returned from a user prompt.",
+    "steps": [
+      "Add a meal with a name and description",
+      "Save the meal",
+      "Request AI meal guidance using the meal description"
+    ],
+    "expected": "The meal appears in the meal log and a readable AI guidance response is displayed."
+  },
+  {
+    "name": "Manage pantry inventory",
+    "viewport": "desktop",
+    "covers": [
+      "pantry item create/read/delete",
+      "pantry inventory persistence"
+    ],
+    "description": "Verifies pantry items can be added, marked used or removed, and remain consistent after reload.",
+    "steps": [
+      "Add a pantry item with quantity and category",
+      "Refresh the page",
+      "Remove the pantry item"
+    ],
+    "expected": "The pantry item is visible after refresh and disappears after removal."
+  },
+  {
+    "name": "Record and review weight entries",
+    "viewport": "mobile",
+    "covers": [
+      "weight logging create/read",
+      "weight history display",
+      "weight input validation"
+    ],
+    "description": "Verifies a dated weight entry is saved and shown in weight history with validation for invalid values.",
+    "steps": [
+      "Enter a valid weight and date",
+      "Save the weight entry",
+      "Refresh the page and review weight history"
+    ],
+    "expected": "The saved weight and date remain visible after refresh, and invalid or empty values are blocked."
+  },
+  {
+    "name": "Handle empty and unavailable data states",
+    "viewport": "mobile",
+    "covers": [
+      "empty states",
+      "backend error handling",
+      "responsive navigation"
+    ],
+    "description": "Verifies the app explains empty lists and surfaces a helpful message when a save or AI request fails.",
+    "steps": [
+      "Open a section with no entries",
+      "Attempt an AI request with an empty prompt",
+      "Review the visible validation message"
+    ],
+    "expected": "Empty sections show helpful guidance and an empty AI prompt is rejected with a visible message."
+  }
+]
