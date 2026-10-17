@@ -1,26 +1,25 @@
 # My Meal Tracker
 
-My Meal Tracker is an AI-assisted meal diary for recording meals, keeping a pantry inventory, and tracking dated weight check-ins. It includes a supportive AI food coach for general meal-planning ideas.
+My Meal Tracker is a meal diary for recording meals, keeping a pantry inventory, and tracking optional weight check-ins. It includes a built-in food-coaching helper with general meal-planning suggestions.
 
 ## Features
 
 - Record meals with meal type, notes, calories, and protein.
 - Review the daily food diary and nutrition summaries.
 - Manage pantry items and quantities.
-- Log dated weight check-ins.
-- Ask the AI food coach for practical, non-judgmental meal ideas.
-- Persist tracker entries through the app backend.
+- Log dated check-ins.
+- Get general meal ideas based on pantry items and logged meals.
+- Save entries in browser local storage.
 
 ## Tech stack
 
 - React 19 and TypeScript
 - Vite
 - Tailwind CSS and Lucide icons
-- AppDeploy SDK for API, database, and AI integration
 
-## Getting started
+## Run locally
 
-Install dependencies and run the development server:
+Install dependencies and start the development server:
 
 ```bash
 npm install
@@ -33,16 +32,20 @@ Create a production build with:
 npm run build
 ```
 
-The app's API routes run in the AppDeploy backend environment. Local development of backend-connected features requires the corresponding AppDeploy runtime/configuration.
+## Deploy to Vercel
 
-## Project structure
+Import this repository into Vercel. Use the default Vite settings:
 
-- `src/App.tsx` — tracker interface and client interactions
-- `src/index.css` — application styling
-- `src/main.tsx` — React entry point
-- `backend/index.ts` — API routes for meals, pantry, weights, and AI coaching
-- `tests/tests.json` — end-to-end test scenarios
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
+- **Install command:** `npm install`
+
+No AppDeploy client package is required by the Vercel frontend build.
+
+## Data and limitations
+
+Entries are stored in the current browser using `localStorage`. They do not automatically sync across browsers or devices, and clearing the browser's site data can remove them. The built-in coach provides rule-based general suggestions; it is not a live generative AI service. A shared database and live AI coach would require a separately configured backend and credentials.
 
 ## Safety note
 
-The AI coach provides general food and meal-planning information, not medical advice or a diagnosis. Consult a qualified clinician or dietitian for individual medical nutrition concerns.
+The coach provides general food and meal-planning information, not medical advice or a diagnosis. Consult a qualified clinician or dietitian for individual medical nutrition concerns.
